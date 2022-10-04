@@ -1,4 +1,8 @@
 #coding='utf-8'
+#灵海之森
+#Python3.6.8
+#2022.10.4
+
 import gevent
 import requests, time, re  # 发送请求，接收JSON数据，正则解析
 from fake_useragent import UserAgent  # 随机请求头
@@ -8,11 +12,6 @@ import urllib3
 import xlwt
 import xlrd
 urllib3.disable_warnings()
-
-
-#微博用户信息爬虫
-#search_url = "https://s.weibo.com/weibo?q=%s"#搜索的url
-# 微博有cookie反爬，如果要使用其搜索功能的话，最好添加cookie
 
 
 def get_user_info(uid,base_url_1,headers):  # 传入用户id
@@ -74,7 +73,10 @@ def get_user_detail_info(uid,base_url_2,headers):  # 传入用户id
     created_at=info["created_at"]#账号创建时间
     description=info["description"]#简介
     #verified_reason=info["verified_reason"]#认证原因/机构
-    ip_location=info["ip_location"]#ip属地
+    try:
+        ip_location=info["ip_location"]#ip属地
+    except:
+        ip_location=info["location"]#使用地点替代ip地址
     
     user_data.append([birthday,created_at,description,ip_location])#
 
@@ -82,7 +84,9 @@ def get_user_detail_info(uid,base_url_2,headers):  # 传入用户id
 
 
 def save_afile(alls,filename):
-    """数据保存"""
+    """数据保存
+        这里是保存单个用户的信息
+    """
     f=xlwt.Workbook()
     sheet1=f.add_sheet(u'sheet1',cell_overwrite_ok=True)
     sheet1.write(0,0,'用户id')
@@ -102,6 +106,33 @@ def save_afile(alls,filename):
         #for data in all:
             for j in range(len(all)):
                 sheet1.write(i,j,all[j])
+            i=i+1
+    f.save(r'用户信息/'+filename+'.xls')
+
+def save_files(alls,filename):
+    """数据保存
+        以微博正文的角度保存
+        多个用户放在一个文件
+    """
+    f=xlwt.Workbook()
+    sheet1=f.add_sheet(u'sheet1',cell_overwrite_ok=True)
+    sheet1.write(0,0,'用户id')
+    sheet1.write(0,1,'用户名')
+    sheet1.write(0,2,'是否认证')
+    sheet1.write(0,3,'认证所属机构')
+    sheet1.write(0,4,'设定地址')
+    sheet1.write(0,5,'性别')
+    sheet1.write(0,6,'粉丝数')
+    sheet1.write(0,7,'发博数')
+    sheet1.write(0,8,'生日')
+    sheet1.write(0,9,'账号创建时间')
+    sheet1.write(0,10,'简介')
+    sheet1.write(0,11,'ip属地')
+    i=1
+    for all in alls:
+        for data in all:
+            for j in range(len(data)):
+                sheet1.write(i,j,data[j])
             i=i+1
     f.save(r'用户信息/'+filename+'.xls')
 
@@ -130,6 +161,7 @@ if __name__ == '__main__':
     'cache-control': 'no-cache',
     'cookie': '',
     'pragma': 'no-cache',
+    'Host':'weibo.com',
     'referer': 'https://weibo.com/',
     'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="102", "Google Chrome";v="102"',
     'sec-ch-ua-mobile': '?0',
@@ -142,30 +174,22 @@ if __name__ == '__main__':
     'user-agent': UserAgent().random,
         }#com版本
 
-    headers_1 = {
-    'Host': 'weibo.com',
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:103.0) Gecko/20100101 Firefox/103.0',
-    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
-    'Accept-Language': 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
-    'Accept-Encoding': 'gzip, deflate, br',
-    'Connection': 'keep-alive',
-    'Cookie': '',
-    'Upgrade-Insecure-Requests': '1',
-    'Sec-Fetch-Dest': 'empty',
-    'Sec-Fetch-Mode': 'cors',
-    'Sec-Fetch-Site': 'same-origin',
-    'TE': 'trailers'
-        }#com版本
-    #生成若干文件，每个文件是一个用户的信息
+    
     base_url_1 = "https://weibo.com/ajax/profile/info"#基本信息域名
     base_url_2 = "https://weibo.com/ajax/profile/detail"#详细信息域名
-    uids=['7198559139']#根据uid获取
-    #uids=extract('测试.xlsx')
+    #uids=['7198559139']#根据uid获取，单个用户
+    
+    filename=''#微博正文文件，多个用户
+    uids = extract(r'微博正文/'+filename+'.xlsx')#多个用户
+    print(uids)
+    infos=[]
     for uid in uids:
         info=[]
-        base_info=get_user_info(uid,base_url_1,headers_1)
-        detail_info=get_user_detail_info(uid,base_url_2,headers_1)
+        base_info = get_user_info(uid,base_url_1,headers)
+        detail_info = get_user_detail_info(uid,base_url_2,headers)
         for i,j in zip(base_info,detail_info):
             info.append(i+j)#组合成一个列表
         print(info)
-        save_afile(info,uid)
+        infos.append(info)
+        #save_afile(info,uid)#保存单个用户信息
+    save_files(infos,filename)#保存多个用户信息
