@@ -7,7 +7,7 @@
 https://github.com/stay-leave/weibo-public-opinion-analysis
 上一个微博爬虫及主题情感分析的项目，是基于手机端的，欢迎star。
 
-本项目基于网页端，能够获取到更丰富的字段数据。
+本项目基于网页端，只需填入cookie，能够获取到更丰富的字段数据。cookie获取方法在文末。
 
 包括三个程序，weibo_blog是微博博文搜索，模仿高级搜索，可自定义微博类型、时间段等；
 
@@ -29,3 +29,16 @@ user_info是微博用户信息爬取，根据博文或评论结果进行爬取�
 https://github.com/dataabc/weibo-search
 
 感谢大佬的开源！
+
+
+cookie获取教程：
+
+1.进入https://weibo.com/
+
+2.F12进入调试页面
+
+3.ctrl+r刷新页面，选择xhr。
+
+4.随便点击一个文件，查看消息头。
+
+5.往下翻到消息头，里面的cookie即是。
