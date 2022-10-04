@@ -1,5 +1,7 @@
 # weibo-crawler
 
+全新微博爬虫项目，博文、评论、用户信息一网打尽！
+
 微信公众号：西书北影。欢迎关注！
 
 https://github.com/stay-leave/weibo-public-opinion-analysis，上一个微博爬虫及主题情感分析的项目，是基于手机端的，欢迎star。
@@ -19,3 +21,6 @@ weibo_comment是微博评论爬取，根据博文结果进行爬取，博文若�
 user_info是微博用户信息爬取，根据博文或评论结果进行爬取，字段属性丰富，包括基本信息和详细信息。可以根据需要爬取单个用户，或者多个。
 
 ![image](https://user-images.githubusercontent.com/58450966/193724744-9a78ac95-133b-4f42-9653-c8ff99782965.png)
+
+
+特别鸣谢：https://github.com/dataabc/weibo-search，感谢大佬的开源！
