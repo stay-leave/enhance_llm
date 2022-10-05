@@ -2,6 +2,8 @@
 
 全新微博爬虫项目，博文、评论、用户信息一网打尽！
 
+CSDN，52账号：灵海之森
+
 微信公众号：西书北影。欢迎关注！
 
 https://github.com/stay-leave/weibo-public-opinion-analysis
