@@ -16,10 +16,6 @@ https://github.com/stay-leave/weibo-public-opinion-analysis
 ![image](https://user-images.githubusercontent.com/58450966/193724601-98e2b0c6-21e4-4201-944d-a547e426d05c.png)
 
 
-weibo_comment是微博评论爬取，根据博文结果进行爬取，博文若只有几百条评论基本可以全部获取，但是几千条以上获取率大幅降低；
-
-![image](https://user-images.githubusercontent.com/58450966/193724682-886fb42a-ed2a-40e3-b787-ccfa418b9596.png)
-
 
 user_info是微博用户信息爬取，根据博文或评论结果进行爬取，字段属性丰富，包括基本信息和详细信息。可以根据需要爬取单个用户，或者多个。
 
