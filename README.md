@@ -9,6 +9,8 @@ CSDN，52账号：灵海之森
 https://github.com/stay-leave/weibo-public-opinion-analysis
 上一个微博爬虫及主题情感分析的项目，是基于手机端的，欢迎star。
 
+微博评论爬虫未开源，若有科研需要请私信csdn。
+
 本项目基于网页端，只需填入cookie，能够获取到更丰富的字段数据。cookie获取方法在文末。
 
 包括三个程序，weibo_blog是微博博文搜索，模仿高级搜索，可自定义微博类型、时间段等；
