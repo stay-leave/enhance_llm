@@ -24,4 +24,8 @@
 
 https://github.com/stay-leave/weibo-public-opinion-analysis
 
+微博评论获取见公众号文章，请后台私信：
+
+https://mp.weixin.qq.com/s?__biz=MzU5MjkyMjQxNg==&mid=2247483684&idx=1&sn=ba29c727bcdd6db2e2630a72f5e62760&chksm=fe19137bc96e9a6d085ae55aefdae74cd2105723c0875e226a2cd2d4fe8056b7437fa954dd3e&token=1356953395&lang=zh_CN#rd
+
 敬请期待！
