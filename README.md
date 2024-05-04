@@ -26,6 +26,6 @@ cd enhance_llm
 pip install -r requirements.txt
 ```
 
-
+enhance_llm is licensed under Apache 2.0 License
 
 
