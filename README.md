@@ -11,7 +11,10 @@
 3.高阶检索增强生成(RAG)系统：基于以上垂域化工作，实现两阶段的RAG系统。增加了query改写、召回重排、检索重排、多轮对话等。http://t.csdnimg.cn/6nw4D
 
 
-
+请注意！
+2.3部分的Python环境配置：
+```cd Breadcrumbsenhance_llm
+pip install -r requirements.txt```
 
 
 
