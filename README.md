@@ -1,6 +1,6 @@
 微信公众号：西书北影。
 
-欢迎交流！
+欢迎交流！日后将把大模型相关的实践实时更新。
 
 本项目包含三部分：
 
@@ -10,11 +10,19 @@
 
 3.高阶检索增强生成(RAG)系统：基于以上垂域化工作，实现两阶段的RAG系统。增加了query改写、召回重排、检索重排、多轮对话等。http://t.csdnimg.cn/6nw4D
 
+显卡：L20(48GB) * 1 
+内存：100GB
 
 请注意！
+1部分的Python环境配置是：
+```
+cd enhance_llm/ebedding_finetune
+pip install -r requirements.txt
+```
+
 2.3部分的Python环境配置是：
 ```
-cd Breadcrumbsenhance_llm
+cd enhance_llm
 pip install -r requirements.txt
 ```
 
