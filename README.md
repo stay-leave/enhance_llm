@@ -12,9 +12,11 @@
 
 
 请注意！
-2.3部分的Python环境配置：
-```cd Breadcrumbsenhance_llm
-pip install -r requirements.txt```
+2.3部分的Python环境配置是：
+```
+cd Breadcrumbsenhance_llm
+pip install -r requirements.txt
+```
 
 
 
