@@ -1,31 +1,18 @@
-
-
 微信公众号：西书北影。
-
-作者是信息资源管理（图情）专业本硕，正在某互联网大厂做算法实习，会不定期（每隔几天）发布新学的技术。
 
 欢迎交流！
 
+本项目包含三部分：
 
-正如项目名，本项目致力于大数据处理和舆情前沿探索，计划涵盖：
+1.向量模型垂域微调：基于llama_index和qwen微调BGE向量模型。http://t.csdnimg.cn/vSmRW
 
-1.数据抓取：微博帖子、微博评论、微博用户信息、微博图片。
+2.大模型垂域微调：基于PEFT微调qwen1.5-7b-chat，做了sft和dpo。http://t.csdnimg.cn/ndZ47
 
-2.数据处理：清洗帖子和评论数据，筛选符合要求的数据。
-
-3.数据分析：从不同维度透视舆情，进行可视化，形成BI报表。
-
-4.大模型微调：基于舆情数据微调大模型，领域适应。
-
-5.垂域问答系统：构建舆情问答框架，帮助读者理解舆情信息。
+3.高阶检索增强生成(RAG)系统：基于以上垂域化工作，实现两阶段的RAG系统。增加了query改写、召回重排、检索重排、多轮对话等。http://t.csdnimg.cn/6nw4D
 
 
-上一个这样综合分析的项目还是在上次（本科）：
 
-https://github.com/stay-leave/weibo-public-opinion-analysis
 
-微博评论获取见公众号文章，请后台私信：
 
-https://mp.weixin.qq.com/s?__biz=MzU5MjkyMjQxNg==&mid=2247483684&idx=1&sn=ba29c727bcdd6db2e2630a72f5e62760&chksm=fe19137bc96e9a6d085ae55aefdae74cd2105723c0875e226a2cd2d4fe8056b7437fa954dd3e&token=1356953395&lang=zh_CN#rd
 
-敬请期待！
+
