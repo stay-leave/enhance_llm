@@ -12,7 +12,7 @@ class InternLM2Chat():
         
     def load_model(self):
         print('================ Loading model ================')
-        self.client = OpenAI(api_key="sk-bf21fcc37a07487ea72fb7f5aa82ad18", base_url="https://api.deepseek.com")
+        self.client = OpenAI(api_key="", base_url="https://api.deepseek.com")
         print('================ Model loaded ================')
 
     def chat(self) -> str:
