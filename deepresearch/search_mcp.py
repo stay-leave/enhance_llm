@@ -120,7 +120,7 @@ def web_search(query: str) -> List[str]:
     url = "https://s.jina.ai/"
     params = {"q": query}
     headers = {
-        "Authorization": "Bearer jina_c7aef58511744aadbaec9f4daba0bc8fJQfqh4zSBSdavQfgJq0dt5BF_vFu",
+        "Authorization": "Bearer ",
         "X-Respond-With": "no-content",
         'Accept': 'application/json'
     }
