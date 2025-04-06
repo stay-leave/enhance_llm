@@ -13,7 +13,9 @@ mcp进行工具使用。
 ```
 客户端：client.py 链接工具，定义总体流程。
 
+## 博客
 
+https://stay-leave.github.io/post/deepresearch%E7%9A%84mcp%E5%AE%9E%E8%B7%B5/
 
 
 ## 本地知识库
