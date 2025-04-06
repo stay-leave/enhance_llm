@@ -13,6 +13,8 @@
 
 4.多模态大模型实现：基于qwen2和clip，使用MLP作为连接器，使得语言模型能懂图像。[http://t.csdnimg.cn/9kDTy](https://blog.csdn.net/qq_43814415/article/details/140137599)
 
+5.deepresearch: 基于MCP工具开发的deepresearch的demo。支持同时检索本地知识库和网络信息。
+
 ## 硬件配置
 
 显卡：L20(48GB) * 1 
